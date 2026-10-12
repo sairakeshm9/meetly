@@ -1,0 +1,18 @@
+{
+  "name": "meeting-assist-editor",
+  "displayName": "Meetly Editor",
+  "description": "Opt-in local code context for Meetly on macOS.",
+  "version": "0.2.0",
+  "publisher": "meeting-assist-local",
+  "engines": { "vscode": "^1.90.0" },
+  "main": "extension.js",
+  "capabilities": { "untrustedWorkspaces": { "supported": true }, "virtualWorkspaces": false },
+  "activationEvents": ["onCommand:meetingAssist.connect"],
+  "contributes": {
+    "commands": [
+      { "command": "meetingAssist.connect", "title": "Connect Meetly" },
+      { "command": "meetingAssist.disconnect", "title": "Disconnect Meetly" }
+    ]
+  },
+  "scripts": { "test": "node --test test.js" }
+}

@@ -1,0 +1,16 @@
+name: Verify
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tests and release build
+        run: |
+          swift test
+          swift build -c release -Xswiftc -warnings-as-errors
+          python3 scripts/check-secrets.py
+          node --test editor-companions/vscode/test.js
+          python3 scripts/build-editor-companions.py
+      - name: App bundle smoke check
+        run: ./scripts/build-app.sh

@@ -1,0 +1,14 @@
+<idea-plugin>
+  <id>com.akshay.meetingassist.editor</id>
+  <name>Meetly Editor</name>
+  <version>0.2.0</version>
+  <vendor>Meetly Local</vendor>
+  <description>Opt-in local active-file context for Meetly. Coding answers may send connected code to OpenAI.</description>
+  <idea-version since-build="243"/>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <actions>
+    <action id="MeetingAssist.Connect" class="meetingassist.ConnectAction" text="Connect Meetly"/>
+    <action id="MeetingAssist.Disconnect" class="meetingassist.DisconnectAction" text="Disconnect Meetly"/>
+  </actions>
+</idea-plugin>
